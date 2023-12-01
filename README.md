@@ -1,2 +1,2 @@
-# aoc-php-starter-kit
-Kit de démarrage pour réaliser les challenges Advent of Code d'une année
+# Advent Of Code 2023
+Sandbox pour réaliser les challenges Advent of Code 2023. Corrigés des différentes journées.
