@@ -9,10 +9,10 @@ class Power
 
     public function determineFewest(Game $game): void
     {
-        // Recherche des maximums
-        $blue = 0;
-        $green = 0;
-        $red = 0;
+        // Recherche des maximums (on démarre à 1 pour ne pas avoir de 0 dans le produit du score)
+        $blue = 1;
+        $green = 1;
+        $red = 1;
 
         foreach ($game->getRounds() as $round) {
 
@@ -30,13 +30,7 @@ class Power
         }
 
         // Calcul du score
-        $score = 1;
-
-        $score *= $blue === 0 ? 1 : $blue;
-        $score *= $green === 0 ? 1 : $green;
-        $score *= $red === 0 ? 1 : $red;
-
-        $this->score += $score;
+        $this->score += ($blue * $green * $red);
     }
 
     public function getScore(): int

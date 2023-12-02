@@ -15,18 +15,15 @@ class Round
     {
         $informations = trim($informations);
 
-        $informations = explode(', ', $informations);
-
         // Initialisation
         $blue = 0;
         $green = 0;
         $red = 0;
 
-        foreach ($informations as $valueAndColor) {
-            $value = explode(' ', $valueAndColor)[0];
-            $color = explode(' ', $valueAndColor)[1];
+        preg_match_all('/(\d+)\s*(blue|green|red)/', $informations, $matches);
 
-            $$color = (int) $value;
+        foreach ($matches[2] as $index => $color) {
+            $$color = (int) $matches[1][$index];
         }
 
         return new self($blue, $green, $red);
