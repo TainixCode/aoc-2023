@@ -5,7 +5,7 @@ namespace Solutions\Day1;
 
 class Filter
 {
-    public static function keepDigits(string $value): string
+    public static function keepDigits(string $value): string|false
     {
         return filter_var($value, FILTER_SANITIZE_NUMBER_INT);
     }
