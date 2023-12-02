@@ -24,4 +24,5 @@ file_put_contents("tests/day{$day}/day{$day}Test.php", "<?php\n\n");
 // Crée le fichier day_X.php à la racine
 file_put_contents("day_{$day}.php", "<?php\n
 require './vendor/autoload.php';\n
-use Data\Reader;\n\n");
+use Data\Reader;\n\n
+\$data = Reader::getDataForDay({$day}, Reader::SAMPLE);\n\n");
