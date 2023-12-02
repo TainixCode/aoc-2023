@@ -1,6 +1,6 @@
 {
-    "name": "tainix/aoc-php-starter-kit",
-    "description": "Resolution des challenges Advent Of Code",
+    "name": "tainix/aoc-php-2023",
+    "description": "Resolution des challenges Advent Of Code 2023",
     "type": "project",
     "require": {
         "php": ">=8.1",
@@ -10,7 +10,7 @@
         "larapack/dd": "1.*"
     },
     "autoload": {
-        "files": ["Reader.php"],
+        "files": ["Reader.php", "Utils.php"],
         "psr-4" : {
             "Solutions\\" : "solutions/"
         }

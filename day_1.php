@@ -1,26 +1,26 @@
 <?php
+declare(strict_types=1);
 
 require './vendor/autoload.php';
 
 use Data\Reader;
+use Utils\Utils;
+
 use Solutions\Day1\Calibration;
 use Solutions\Day1\Filter;
 
 $data = Reader::getDataForDay(1, Reader::DATA);
 
-$sum = 0;
-foreach ($data as $value) {
-    $sum += Filter::turnToNumber($value);
-}
-echo '1 : ' . $sum;
+echo '1 : ' .
+    Utils::sum($data, function($item) {
+        return Filter::turnToNumber($item);
+    });
 
 echo "\n";
 
-$sum = 0;
-foreach ($data as $value) {
-    $calibration = new Calibration($value);
-    $calibration->analyze();
-    $sum += $calibration->getNumber();
-}
-
-echo '2 : ' . $sum;
+echo '2 : ' .
+    Utils::sum($data, function($item) {
+        $calibration = new Calibration($item);
+        $calibration->analyze();
+        return $calibration->getNumber();
+    });

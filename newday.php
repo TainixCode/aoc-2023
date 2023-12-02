@@ -19,10 +19,11 @@ if (!file_exists("data/day{$day}")) {
 // Crée les fichiers data.txt et sample.txt dans data/dayX
 file_put_contents("data/day{$day}/data.txt", "");
 file_put_contents("data/day{$day}/sample.txt", "");
-file_put_contents("tests/day{$day}/day{$day}Test.php", "<?php\n\n");
+file_put_contents("tests/day{$day}/day{$day}Test.php", "<?php\ndeclare(strict_types=1);\n\n");
 
 // Crée le fichier day_X.php à la racine
-file_put_contents("day_{$day}.php", "<?php\n
+file_put_contents("day_{$day}.php", "<?php
+declare(strict_types=1);\n
 require './vendor/autoload.php';\n
-use Data\Reader;\n\n
+use Data\Reader;\n
 \$data = Reader::getDataForDay({$day}, Reader::SAMPLE);\n\n");
