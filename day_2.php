@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 require './vendor/autoload.php';
 
@@ -13,6 +14,8 @@ $control = new Control;
 $power = new Power;
 
 foreach ($data as $gameInformations) {
+    assert(! is_null($gameInformations));
+    
     $game = Game::createFromText($gameInformations);
 
     $control->verifyGame($game); // 1

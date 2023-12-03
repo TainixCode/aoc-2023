@@ -6,9 +6,9 @@ namespace Utils;
 class Utils
 {
     /**
-     * @param array<int, string|null> $array
+     * @param array<int, mixed> $array
      */
-    public static function sum(array $array, callable $callable): int|float
+    public static function sum(array $array, callable $callable): int
     {
         return array_reduce($array, function ($carry, $item) use ($callable) {
             return $carry + $callable($item);

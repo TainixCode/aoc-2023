@@ -27,13 +27,14 @@ class Schematic
 
     private int $y = 0;
 
-    public function setLine(string $line): void
+    public function setLine(?string $line): void
     {
         $startedPart = false;
         $xStart = null;
         $xEnd = null;
         $number = null;
 
+        assert(! is_null($line));
         foreach (str_split($line) as $x => $pointValue) {
 
             // On intègre les points

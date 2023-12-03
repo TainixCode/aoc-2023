@@ -1,0 +1,9 @@
+parameters:
+    level: max
+    paths:
+        - solutions
+        - ./
+    excludePaths:
+        analyse:
+            - %currentWorkingDirectory%/vendor/*
+            - %currentWorkingDirectory%/tests/*
